@@ -1,15 +1,15 @@
-# gane-of-life
+# game-of-life
 
 A basic JavaScript implementation of the Conway's Game of Life. This was just for testing my own skillset.
 
 ## Options
 
- - rows: The number of rows to generate (defaul: 30)  
- - columns: The number of columns to generate (default: 50)  
- - gridContainer: The DOM element to render the Grid in (default: 'canvas')  
- - cellSize: The size (in px) of each cell (default: 10)   
- - startRandomized: Start with a randomized lifecycle (default: true)  
- - interval: The interval between each lifecycle (default: 100)  
+ - **rows**: The number of rows to generate (defaul: 30)  
+ - **columns**: The number of columns to generate (default: 50)  
+ - **gridContainer**: The DOM element to render the Grid in (default: 'canvas')  
+ - **cellSize**: The size (in px) of each cell (default: 10)   
+ - **startRandomized**: Start with a randomized lifecycle (default: true)  
+ - **interval**: The interval between each lifecycle (default: 100)  
 
 ## Start
 
