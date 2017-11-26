@@ -54,7 +54,7 @@ var Cell = function(x, y, size) {
 
 };
 
-var GameOfLife = function(options = null) {
+var GameOfLife = function(options = {}) {
 
     var options = {
         rows: options.rows || 30,
@@ -62,7 +62,7 @@ var GameOfLife = function(options = null) {
         gridContainer: options.gridContainer || 'canvas',
         cellSize: options.cellSize || 10,
         randomized: options.randomized || true,
-        interval: options.interval || 500
+        interval: options.interval || 100
     };
 
     var stepCounter = 0;
