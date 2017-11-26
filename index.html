@@ -1,0 +1,26 @@
+<html>
+<script src="GameOfLife.js"></script>
+<link rel="stylesheet" href="stylesheet.css">
+
+<body>
+    <center>
+        <div id="canvas"></div>
+        <hr>
+        <input type="button" onclick="game.start();" value="Start">
+        <input type="button" onclick="game.stop();" value="Stop">
+        <span id="stepCounter">Steps Taken: 0</span>
+    </center>
+    <script>
+        var options = {
+            rows: 30,
+            columns: 50,
+            gridContainer: 'canvas',
+            cellSize: 10,
+            startRandomized: true,
+            interval: 100
+        }
+        var game = new GameOfLife(options);
+    </script>
+</body>
+
+</html>

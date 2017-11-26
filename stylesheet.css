@@ -1,0 +1,15 @@
+.grid-container {}
+
+.cell {
+    border: 1px solid lightgrey;
+    display: inline-block;
+    width: 10px;
+}
+
+.cell.cell-alive {
+    background-color: black;
+}
+
+.cell.cell-dead {
+    background-color: white;
+}
