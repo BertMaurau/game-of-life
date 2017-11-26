@@ -47,7 +47,7 @@ var game = new GameOfLife();
 Attach the start handler to an input onClick (or call it from the script where you load the game)
 
 ```
-gmae.start();
+game.start();
 ```
 
 ## Todo
