@@ -2,6 +2,9 @@
 
 A basic JavaScript implementation of the Conway's Game of Life. This was just for testing my own skillset.
 
+![alt text](https://github.com/BertMaurau/game-of-life/blob/master/screen.png)
+
+
 ## Options
 
  - **rows**: The number of rows to generate (defaul: 30)  
