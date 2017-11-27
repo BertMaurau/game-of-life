@@ -68,11 +68,11 @@ var GameOfLife = function(inputParams = {}) {
         interval: (inputParams.interval === undefined) ? 100 : inputParams.interval
     };
 
-    console.log('CellSize: ' + options.cellSize);
-    console.log(inputParams.startRandomized);
-
     var stepCounter = 0;
     var stepCounterElement = document.getElementById('stepCounter');
+
+    // Keep track of the running interval
+    var currentlyInGame = false;
 
     // Define a Grid
     var grid = new Grid(options.rows, options.columns, options.gridContainer, options.cellSize);
@@ -86,13 +86,30 @@ var GameOfLife = function(inputParams = {}) {
 
     this.start = function() {
 
-        this.timer = setInterval(this.step, options.interval);
+        if (currentlyInGame) {
+            console.log('Interval already running..');
+        } else {
+
+            currentlyInGame = true;
+
+            this.timer = setInterval(this.step, options.interval);
+
+        }
 
     }
 
     this.stop = function() {
-        // Clear the timer
-        clearInterval(this.timer);
+
+        if (!currentlyInGame) {
+            console.log('No Interval running..');
+        } else {
+
+            currentlyInGame = false;
+
+            // Clear the timer
+            clearInterval(this.timer);
+
+        }
 
     }
 
