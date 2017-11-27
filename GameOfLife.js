@@ -1,3 +1,34 @@
+//--------------------------------------------------------------------------------------------------------------------------
+// HOW THIS WORKS
+//--------------------------------------------------------------------------------------------------------------------------
+//
+// The code exists in 3 Main parts
+//      - The Cell object
+//      - The Game object
+//      - The Grid object
+//
+// The Cell thingy contains everything that defines itself (alive status, touch handler, element creation, ..
+//
+// The Game thingy just sets the given options, starts the game, BUT has two important functions
+//  - Step: This iterates all the cells and calculates the next life cycle (using the getAliveNeighbours function)
+//  - getAliveNeighbours: checks the 'current cell's' neighburs in a 3-by-3 to define it's next lifecycle
+//
+// The Grid thingy just generates the grid and contains the Cells. It also has the function to randomize the cells state
+//
+// The code should be self-explanatory. I tried to make it like that at least.
+// For further questions, feedback, remarks, .. Feel free to contact me
+//--------------------------------------------------------------------------------------------------------------------------
+// Author
+//--------------------------------------------------------------------------------------------------------------------------
+//
+//  Bert Maurau
+//
+//      hello@bertmaurau.be
+//      https://bertmaurau.be
+//
+//--------------------------------------------------------------------------------------------------------------------------
+
+
 // THe individual cell object
 var Cell = function(x, y, size) {
 
@@ -24,6 +55,7 @@ var Cell = function(x, y, size) {
 
     this.element;
 
+    // Allow for child selection or whatever you call that (within the onclick handler)
     var parent = this;
 
     // Let me get touched by my neighbour or the user
