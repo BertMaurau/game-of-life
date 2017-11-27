@@ -8,6 +8,7 @@
         <hr>
         <input type="button" onclick="game.start();" value="Start">
         <input type="button" onclick="game.stop();" value="Stop">
+        <input type="button" onclick="game.randomize();" value="Randomize">
         <span id="stepCounter">Steps Taken: 0</span>
     </center>
     <script>
@@ -15,11 +16,11 @@
             rows: 30,
             columns: 50,
             gridContainer: 'canvas',
-            cellSize: 10,
+            cellSize: 20,
             startRandomized: false,
             interval: 100
         }
-        var game = new GameOfLife();
+        var game = new GameOfLife(options);
     </script>
 </body>
 
