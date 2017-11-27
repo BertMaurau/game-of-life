@@ -60,7 +60,7 @@ var options = {
 Initialize a new Game
 
 ```
-var game = new GameOfLife();
+var game = new GameOfLife(options);
 ```
 
 Attach the start handler to an input onClick (or call it from the script where you load the game)
