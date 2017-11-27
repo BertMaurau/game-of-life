@@ -60,14 +60,15 @@ var Cell = function(x, y, size) {
 var GameOfLife = function(inputParams = {}) {
 
     var options = {
-        rows: inputParams.rows || 30,
-        columns: inputParams.columns || 50,
-        gridContainer: inputParams.gridContainer || 'canvas',
-        cellSize: inputParams.cellSize || 10,
+        rows: (inputParams.rows === undefined) ? 30 : inputParams.rows,
+        columns: (inputParams.columns === undefined) ? 50 : inputParams.columns,
+        gridContainer: (inputParams.gridContainer === undefined) ? 'canvas' : inputParams.gridContainer,
+        cellSize: (inputParams.cellSize === undefined) ? 10 : inputParams.cellSize,
         startRandomized: (inputParams.startRandomized === undefined) ? false : inputParams.startRandomized,
-        interval: inputParams.interval || 100
+        interval: (inputParams.interval === undefined) ? 100 : inputParams.interval
     };
 
+    console.log('CellSize: ' + options.cellSize);
     console.log(inputParams.startRandomized);
 
     var stepCounter = 0;
@@ -80,7 +81,7 @@ var GameOfLife = function(inputParams = {}) {
     grid.generate();
 
     if (options.startRandomized) {
-        grid.randomize();
+        this.randomize();
     }
 
     this.start = function() {
@@ -93,6 +94,11 @@ var GameOfLife = function(inputParams = {}) {
         // Clear the timer
         clearInterval(this.timer);
 
+    }
+
+    this.randomize = function() {
+        console.log('Randomizing Grid');
+        grid.randomize();
     }
 
     this.step = function() {
