@@ -38,6 +38,7 @@ The "game" is a zero-player game, meaning that its evolution is determined by it
 <hr>
 <input type="button" onclick="game.start();" value="Start">
 <input type="button" onclick="game.stop();" value="Stop">
+<input type="button" onclick="game.randomize();" value="Randomize">
 <span id="stepCounter">Steps Taken: 0</span>
 ```
 
@@ -68,9 +69,10 @@ Attach the start handler to an input onClick (or call it from the script where y
 game.start();
 ```
 
+Draw your own cells by clicking or click the randomizer button to get started.
+
 ## Todo
 
  - Add a reset button  
- - Allow for user input  
  - Better randomizer  
  - ...  
