@@ -48,22 +48,25 @@ var Cell = function(x, y, size) {
         this.element.id = "cell_" + this.location.cor_x + "_" + this.location.cor_y;
         this.element.className = (this.alive) ? 'cell cell-alive' : 'cell cell-dead';
         this.element.style.cssText = 'display:inline-block;width:' + this.size + ';height:' + this.size + ';';
+        this.element.onclick = function() { this.touch() };
 
         return this.element;
     }
 
 };
 
-var GameOfLife = function(options = {}) {
+var GameOfLife = function(inputParams = {}) {
 
     var options = {
-        rows: options.rows || 30,
-        columns: options.columns || 50,
-        gridContainer: options.gridContainer || 'canvas',
-        cellSize: options.cellSize || 10,
-        randomized: options.randomized || true,
-        interval: options.interval || 100
+        rows: inputParams.rows || 30,
+        columns: inputParams.columns || 50,
+        gridContainer: inputParams.gridContainer || 'canvas',
+        cellSize: inputParams.cellSize || 10,
+        startRandomized: (inputParams.startRandomized === undefined) ? false : inputParams.startRandomized,
+        interval: inputParams.interval || 100
     };
+
+    console.log(inputParams.startRandomized);
 
     var stepCounter = 0;
     var stepCounterElement = document.getElementById('stepCounter');
@@ -74,7 +77,7 @@ var GameOfLife = function(options = {}) {
     // Draw the grid
     grid.generate();
 
-    if (options.randomized) {
+    if (options.startRandomized) {
         grid.randomize();
     }
 
