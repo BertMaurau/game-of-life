@@ -216,6 +216,14 @@ var Grid = function(rows, columns, gridContainer, cellSize) {
         }
     }
 
+    // Check if element exists
+    if (!document.getElementById(gridContainer)) {
+        // Generate a new Dom element
+        let element = document.createElement('div');
+        element.id = gridContainer;
+        document.body.appendChild(element);
+    }
+
     this.gridContainer = document.getElementById(gridContainer);
 
     // Style the container
