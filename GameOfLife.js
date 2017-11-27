@@ -24,6 +24,8 @@ var Cell = function(x, y, size) {
 
     this.element;
 
+    var parent = this;
+
     // Let me get touched by my neighbour or the user
     // This part could be a written a bit better probably
     this.touch = function() {
@@ -48,7 +50,7 @@ var Cell = function(x, y, size) {
         this.element.id = "cell_" + this.location.cor_x + "_" + this.location.cor_y;
         this.element.className = (this.alive) ? 'cell cell-alive' : 'cell cell-dead';
         this.element.style.cssText = 'display:inline-block;width:' + this.size + ';height:' + this.size + ';';
-        this.element.onclick = function() { this.touch() };
+        this.element.onclick = function() { parent.touch() };
 
         return this.element;
     }
