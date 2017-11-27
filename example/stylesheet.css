@@ -4,6 +4,10 @@
     border: 1px solid lightgrey;
 }
 
+.cell:hover {
+    background-color: steelblue !important;
+}
+
 .cell.cell-alive {
     background-color: black;
 }
